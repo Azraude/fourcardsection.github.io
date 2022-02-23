@@ -1,0 +1,143 @@
+:root{
+    --red:hsl(0, 78%, 62%);
+    --cyan : hsl(180, 62%, 55%);
+    --orange:hsl(34, 97%, 64%);
+    --blue:hsl(212, 86%, 64%);
+    --darkblue:hsl(234, 12%, 34%);
+    --grayishblue: hsl(229, 6%, 66%);
+    --lightgray:hsl(0, 0%, 98%);
+    --white:hsl(0, 0%, 87%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+
+body{
+    background-color: var(--lightgray);
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+}
+.header{
+    margin: 5rem auto;
+    max-width: 550px;
+    text-align: center;
+}
+
+.header-title {
+    color: var(--darkblue);
+    font-weight: 200;
+    font-size: 2.25rem;
+}
+
+.header-subtitle{
+    color:var(--darkblue);
+    font-weight: 600;
+    font-size: 2.25rem;
+}
+
+.header-paragraph{
+    color:var(--grayishblue);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+
+.card {
+    border-radius: 10px;
+    padding: 3rem 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 1rem 2rem .5rem var(--white);
+  
+}
+.card-supervisor{
+    border-top:.5rem solid var(--cyan);
+}
+.card-team-builder{
+    border-top:.5rem solid var(--red);
+}
+
+.card-karma{
+    border-top:.5rem solid var(--orange);
+}
+.card-calculator{
+    border-top:.5rem solid var(--blue);
+}
+
+.cards {
+    margin: 7.5rem 8% 0;
+}
+
+.card-title{
+    font-size: 1.5rem;
+    font-weight:500;
+    color: var(--darkblue);
+}
+
+.card-paragraph{
+    
+    font-size:0.9rem;
+    color:var(--grayishblue);
+    font-weight:400;
+}
+.card-image{
+    display:flex;
+    justify-content: right;
+}
+
+@media (min-width: 680px) {
+    .header-paragraph{
+        font-size: 1.025rem;
+        margin-top:15px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;       
+    }
+    .card{
+        transition:all .3s ease-in-out;
+    }
+    .card:hover{
+        cursor:pointer;
+        box-shadow: 0 1rem 2rem 1.15rem var(--white);
+        transform: scale(1.025);
+       
+    }
+    
+}
+@media (min-width: 1250px) {
+    .header-paragraph{
+        font-size: 1.025rem;
+        margin-top:15px;
+    }
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "start middle1 end"
+        "start middle2 end";       
+    }
+
+    .card-supervisor  {
+        grid-area: start;
+        align-self: center;
+    }
+
+    .card-team-builder {
+        grid-area: middle1;
+    }
+    .card-karma {
+        grid-area: middle2;
+    }
+    .card-calculator {
+        grid-area: end;
+        align-self: center;
+    }
+
+}
